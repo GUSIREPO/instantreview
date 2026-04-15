@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Instant Review — AI-Powered Ultrasound Feedback | GUSI ScanHub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,600;1,700&display=swap" rel="stylesheet">
+<style>
+@import url('https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=satoshi@400,500,700&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --teal: #00848e;
+  --teal-dark: #006970;
+  --teal-light: #d6eff1;
+  --orange: #ff6d00;
+  --orange-dark: #cc5700;
+  --orange-light: #ffeedd;
+  --cream: #fdf6f0;
+  --white: #ffffff;
+  --black: #0d0d0d;
+  --gray: #222222;
+  --gray-mid: #555555;
+  --gray-light: #e2ddd7;
+  --shadow-sm: 0 2px 12px rgba(0,0,0,0.07);
+  --shadow-md: 0 8px 36px rgba(0,0,0,0.11);
+  --shadow-lg: 0 20px 60px rgba(0,0,0,0.14);
+  --f-head: 'Clash Display', 'Plus Jakarta Sans', sans-serif;
+  --f-body: 'Satoshi', 'Plus Jakarta Sans', sans-serif;
+}
+html { scroll-behavior: smooth; }
+body { font-family: var(--f-body); background: var(--cream); color: var(--black); overflow-x: hidden; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 5vw; height: 68px;
+  background: rgba(253,246,240,0.96); backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--gray-light);
+}
+.gusi-logo { display: flex; align-items: stretch; text-decoration: none; }
+.gusi-box { background: var(--black); color: #fff; font-family: var(--f-head); font-size: 15px; font-weight: 600; letter-spacing: 2px; padding: 6px 11px; display: flex; align-items: center; }
+.gusi-sliver { background: var(--teal); width: 3px; }
+.gusi-wordblock { background: var(--teal); padding: 6px 10px; display: flex; align-items: center; }
+.gusi-wordblock p { font-family: var(--f-body); font-size: 6px; font-weight: 600; letter-spacing: 1.8px; color: #fff; line-height: 1.55; text-transform: uppercase; }
+.nav-product { font-family: var(--f-head); font-size: 13px; font-weight: 600; color: var(--teal); margin-left: 12px; }
+.nav-product span { font-family: var(--f-body); color: var(--gray-mid); font-weight: 500; font-size: 12px; }
+.nav-cta { background: var(--orange); color: #fff; border: none; border-radius: 6px; padding: 10px 22px; font-family: var(--f-head); font-size: 13px; font-weight: 600; letter-spacing: 0.3px; cursor: pointer; text-decoration: none; transition: background 0.2s, transform 0.15s; display: inline-block; }
+.nav-cta:hover { background: var(--orange-dark); transform: translateY(-1px); }
+
+/* ── HERO ── */
+.hero { position: relative; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 130px 5vw 0; background: var(--teal); overflow: hidden; }
+.hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 50% at 20% 60%, rgba(0,0,0,0.08) 0%, transparent 100%), radial-gradient(ellipse 50% 40% at 80% 30%, rgba(255,109,0,0.09) 0%, transparent 100%); pointer-events: none; }
+
+.hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25); border-radius: 4px; padding: 7px 16px; font-family: var(--f-body); font-size: 11px; font-weight: 600; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,0.9); margin-bottom: 32px; animation: fadeUp 0.7s ease both; }
+.eyebrow-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--orange); animation: blink 2s ease-in-out infinite; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.25} }
+
+.hero-title { font-family: var(--f-head); font-size: clamp(46px, 7.5vw, 98px); font-weight: 700; line-height: 0.94; letter-spacing: -2px; color: #fff; animation: fadeUp 0.7s 0.1s ease both; max-width: 980px; margin-bottom: 6px; }
+.hero-title em { font-style: italic; color: var(--orange); }
+.hero-subtitle { font-family: var(--f-body); font-size: clamp(16px, 1.8vw, 20px); font-weight: 500; color: rgba(255,255,255,0.82); max-width: 540px; margin: 28px auto 48px; line-height: 1.75; animation: fadeUp 0.7s 0.18s ease both; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; animation: fadeUp 0.7s 0.26s ease both; position: relative; z-index: 2; }
+
+.btn-primary { background: var(--orange); color: #fff; border: none; border-radius: 6px; padding: 16px 34px; font-family: var(--f-head); font-size: 13px; font-weight: 600; letter-spacing: 0.4px; cursor: pointer; text-decoration: none; display: inline-block; transition: all 0.2s; box-shadow: 0 4px 20px rgba(255,109,0,0.38); }
+.btn-primary:hover { background: var(--orange-dark); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(255,109,0,0.45); }
+.btn-ghost-w { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.35); border-radius: 6px; padding: 16px 34px; font-family: var(--f-head); font-size: 13px; font-weight: 500; letter-spacing: 0.4px; cursor: pointer; text-decoration: none; display: inline-block; transition: all 0.2s; }
+.btn-ghost-w:hover { border-color: rgba(255,255,255,0.8); background: rgba(255,255,255,0.08); transform: translateY(-2px); }
+
+/* ── SCAN MOCK ── */
+.hero-visual { margin-top: 68px; width: 100%; max-width: 680px; position: relative; z-index: 2; animation: fadeUp 0.7s 0.35s ease both; }
+.hero-wave { position: absolute; bottom: 0; left: 0; right: 0; line-height: 0; }
+
+.scan-card { background: #fff; border-radius: 14px 14px 0 0; padding: 26px 26px 30px; box-shadow: var(--shadow-lg); text-align: left; }
+.scan-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
+.scan-label { font-family: var(--f-body); font-size: 10px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--gray-mid); }
+.scan-ai-badge { display: flex; align-items: center; gap: 6px; background: var(--teal-light); border: 1px solid rgba(0,132,142,0.2); border-radius: 4px; padding: 5px 12px; font-family: var(--f-body); font-size: 10px; font-weight: 600; color: var(--teal); }
+.ai-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal); animation: blink 1.5s ease-in-out infinite; }
+.scan-bars { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-bottom: 16px; }
+.sbar { background: var(--cream); border-radius: 8px; padding: 12px 14px; border: 1px solid var(--gray-light); }
+.sbar-name { font-family: var(--f-body); font-size: 10px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--gray-mid); margin-bottom: 8px; }
+.sbar-track { height: 5px; background: var(--gray-light); border-radius: 3px; overflow: hidden; margin-bottom: 8px; }
+.sbar-fill { height: 100%; border-radius: 3px; animation: grow 2.2s cubic-bezier(.22,1,.36,1) both; }
+@keyframes grow { from{width:0} }
+.fill-teal{background:var(--teal)} .fill-orange{background:var(--orange)} .fill-green{background:#1f9e60}
+.sbar-val { font-family: var(--f-head); font-size: 24px; font-weight: 700; letter-spacing: -1px; }
+.val-teal{color:var(--teal)} .val-orange{color:var(--orange)} .val-green{color:#1f9e60}
+.scan-feedback { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px; }
+.fb-block { background: var(--cream); border-radius: 8px; padding: 14px; border: 1px solid var(--gray-light); }
+.fb-tag { font-family: var(--f-body); font-size: 10px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; margin-bottom: 10px; display: flex; align-items: center; gap: 5px; }
+.tag-green{color:#1f9e60} .tag-orange{color:var(--orange)}
+.fb-line { height: 7px; border-radius: 3px; margin-bottom: 5px; animation: lineReveal 0.5s ease both; }
+@keyframes lineReveal { from{opacity:0;width:0} }
+.fl-80{width:80%;animation-delay:0.9s} .fl-60{width:60%;animation-delay:1.1s} .fl-70{width:70%;animation-delay:1.3s} .fl-50{width:50%;animation-delay:1.5s} .fl-65{width:65%;animation-delay:1.7s}
+.scan-time { font-family: var(--f-body); font-size: 12px; font-weight: 500; color: var(--gray-mid); text-align: right; border-top: 1px solid var(--gray-light); padding-top: 12px; }
+.scan-time strong { color: var(--teal); font-weight: 700; }
+
+/* ── STATS ── */
+.stats { background: var(--orange); }
+.stats-inner { max-width: 1100px; margin: 0 auto; padding: 52px 5vw; display: grid; grid-template-columns: repeat(auto-fit,minmax(160px,1fr)); gap: 24px; text-align: center; }
+.stat-num { font-family: var(--f-head); font-size: 52px; font-weight: 700; letter-spacing: -2px; color: #fff; line-height: 1; margin-bottom: 6px; }
+.stat-num sup { font-size: 20px; vertical-align: super; letter-spacing: 0; }
+.stat-label { font-family: var(--f-body); font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.85); line-height: 1.45; }
+
+/* ── SECTION COMMON ── */
+section { position: relative; }
+.section-inner { max-width: 1100px; margin: 0 auto; padding: 96px 5vw; }
+.section-eyebrow { display: inline-block; font-family: var(--f-body); font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--orange); margin-bottom: 14px; }
+.section-title { font-family: var(--f-head); font-size: clamp(30px, 4vw, 54px); font-weight: 700; letter-spacing: -1.5px; line-height: 1.0; color: var(--black); margin-bottom: 18px; }
+.section-title .teal { color: var(--teal); }
+.section-desc { font-family: var(--f-body); font-size: 17px; font-weight: 500; color: var(--gray); max-width: 540px; line-height: 1.75; }
+
+/* ── HOW IT WORKS ── */
+.hiw { background: var(--white); }
+.steps { display: grid; grid-template-columns: repeat(3,1fr); gap: 0; margin-top: 60px; position: relative; }
+.steps::before { content:''; position:absolute; top:40px; left:calc(16.66% + 24px); right:calc(16.66% + 24px); height:1px; background:var(--gray-light); }
+.step { padding: 0 32px; text-align: center; }
+.step-num { width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: var(--f-head); font-size: 24px; font-weight: 700; margin: 0 auto 24px; position: relative; z-index: 1; }
+.num-teal{background:var(--teal);color:#fff} .num-orange{background:var(--orange);color:#fff} .num-green{background:#1f9e60;color:#fff}
+.step h3 { font-family: var(--f-head); font-size: 20px; font-weight: 600; letter-spacing: -0.4px; margin-bottom: 10px; color: var(--black); }
+.step p { font-family: var(--f-body); font-size: 15px; font-weight: 500; color: var(--gray); line-height: 1.7; }
+
+/* ── FEATURES ── */
+.features { background: var(--cream); }
+.features-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(300px,1fr)); gap: 18px; margin-top: 56px; }
+.feat-card { background: var(--white); border: 1px solid var(--gray-light); border-radius: 12px; padding: 28px; transition: transform 0.2s, box-shadow 0.2s; }
+.feat-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.feat-icon { width: 48px; height: 48px; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 18px; }
+.fi-teal{background:var(--teal-light)} .fi-orange{background:var(--orange-light)}
+.feat-card h3 { font-family: var(--f-head); font-size: 18px; font-weight: 600; letter-spacing: -0.3px; margin-bottom: 10px; color: var(--black); }
+.feat-card p { font-family: var(--f-body); font-size: 15px; font-weight: 500; color: var(--gray); line-height: 1.65; }
+
+/* ── WHO IT'S FOR ── */
+.teal-band { background: var(--teal); }
+.teal-band-inner { max-width: 1100px; margin: 0 auto; padding: 80px 5vw; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+.teal-band h2 { font-family: var(--f-head); font-size: clamp(28px,4vw,50px); font-weight: 700; letter-spacing: -1.5px; color: #fff; line-height: 1.02; margin-bottom: 18px; }
+.teal-band h2 em { font-style: italic; color: var(--orange); }
+.teal-band .lead { font-family: var(--f-body); font-size: 16px; font-weight: 500; color: rgba(255,255,255,0.82); line-height: 1.75; }
+
+.aud-list { display: flex; flex-direction: column; gap: 10px; }
+.aud-row { display: flex; align-items: flex-start; gap: 14px; background: rgba(255,255,255,0.1); border-radius: 8px; padding: 16px 18px; border: 1px solid rgba(255,255,255,0.14); transition: background 0.2s; }
+.aud-row:hover { background: rgba(255,255,255,0.16); }
+.aud-icon { font-size: 20px; line-height: 1; flex-shrink: 0; margin-top: 1px; }
+.aud-text h4 { font-family: var(--f-head); font-size: 15px; font-weight: 600; color: #fff; margin-bottom: 4px; }
+.aud-text p { font-family: var(--f-body); font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.78); line-height: 1.55; }
+
+/* ── CLINICAL ── */
+.clinical { background: var(--white); }
+.clinical-center { text-align: center; }
+.clinical-center .section-desc { margin: 0 auto; }
+.pills { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 40px; }
+.pill { display: flex; align-items: center; gap: 8px; background: var(--teal-light); border: 1px solid rgba(0,132,142,0.2); border-radius: 4px; padding: 10px 18px; font-family: var(--f-body); font-size: 14px; font-weight: 600; color: var(--teal-dark); transition: all 0.2s; cursor: default; }
+.pill:hover { background: var(--teal); color: #fff; }
+.pill-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal); transition: background 0.2s; }
+.pill:hover .pill-dot { background: rgba(255,255,255,0.5); }
+.pill-more { background: transparent; border: 1px dashed var(--gray-light); color: var(--gray-mid); font-weight: 500; }
+.pill-more:hover { background: var(--cream); color: var(--gray); }
+
+/* ── ECOSYSTEM ── */
+.ecosystem { background: var(--cream); }
+.eco-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(180px,1fr)); gap: 14px; margin-top: 52px; }
+.eco-card { background: var(--white); border: 1px solid var(--gray-light); border-radius: 10px; padding: 22px 20px; transition: transform 0.2s, box-shadow 0.2s; }
+.eco-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-sm); }
+.eco-card.highlight { background: var(--teal); border-color: var(--teal); }
+.eco-tag { font-family: var(--f-body); font-size: 9px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--orange); margin-bottom: 6px; }
+.eco-card.highlight .eco-tag { color: rgba(255,255,255,0.55); }
+.eco-name { font-family: var(--f-head); font-size: 16px; font-weight: 600; margin-bottom: 6px; color: var(--black); letter-spacing: -0.3px; }
+.eco-card.highlight .eco-name { color: #fff; }
+.eco-desc { font-family: var(--f-body); font-size: 13px; font-weight: 500; color: var(--gray-mid); line-height: 1.55; }
+.eco-card.highlight .eco-desc { color: rgba(255,255,255,0.75); }
+
+/* ── FORM ── */
+.form-section { background: var(--teal); }
+.form-inner { max-width: 1100px; margin: 0 auto; padding: 96px 5vw; display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; }
+.form-left h2 { font-family: var(--f-head); font-size: clamp(28px,4vw,52px); font-weight: 700; letter-spacing: -2px; color: #fff; line-height: 1.0; margin-bottom: 18px; }
+.form-left h2 em { font-style: italic; color: var(--orange); }
+.form-left .lead { font-family: var(--f-body); font-size: 16px; font-weight: 500; color: rgba(255,255,255,0.8); line-height: 1.75; margin-bottom: 36px; }
+.perks { display: flex; flex-direction: column; gap: 12px; }
+.perk { display: flex; align-items: center; gap: 12px; font-family: var(--f-body); font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.9); }
+.perk-check { width: 22px; height: 22px; border-radius: 50%; background: rgba(255,255,255,0.16); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+
+.form-card { background: #fff; border-radius: 14px; padding: 40px 36px; box-shadow: var(--shadow-lg); }
+.form-title { font-family: var(--f-head); font-size: 24px; font-weight: 700; letter-spacing: -0.8px; color: var(--black); margin-bottom: 6px; }
+.form-subtitle { font-family: var(--f-body); font-size: 14px; font-weight: 500; color: var(--gray-mid); margin-bottom: 28px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.form-group { margin-bottom: 14px; }
+
+label { display: block; font-family: var(--f-body); font-size: 11px; font-weight: 700; color: var(--gray); letter-spacing: 0.8px; text-transform: uppercase; margin-bottom: 6px; }
+input, select, textarea { width: 100%; background: var(--cream); border: 1.5px solid var(--gray-light); border-radius: 8px; padding: 12px 14px; font-family: var(--f-body); font-size: 15px; font-weight: 500; color: var(--black); outline: none; transition: border-color 0.2s, box-shadow 0.2s; appearance: none; }
+input::placeholder, textarea::placeholder { color: #b0a89f; font-weight: 400; }
+input:focus, select:focus, textarea:focus { border-color: var(--teal); box-shadow: 0 0 0 3px rgba(0,132,142,0.12); background: #fff; }
+select { cursor: pointer; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23555' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; }
+textarea { resize: vertical; min-height: 86px; }
+
+.form-submit { width: 100%; background: var(--teal); color: #fff; border: none; border-radius: 8px; padding: 16px; font-family: var(--f-head); font-size: 14px; font-weight: 600; letter-spacing: 0.4px; cursor: pointer; margin-top: 6px; transition: all 0.2s; }
+.form-submit:hover { background: var(--teal-dark); transform: translateY(-2px); box-shadow: 0 6px 24px rgba(0,132,142,0.32); }
+.form-fine { font-family: var(--f-body); font-size: 11px; font-weight: 400; color: #999; text-align: center; margin-top: 12px; line-height: 1.6; }
+.form-fine a { color: var(--teal); text-decoration: none; }
+.success-msg { display: none; text-align: center; padding: 24px 0; }
+.success-msg.visible { display: block; }
+.success-icon { width: 64px; height: 64px; border-radius: 50%; background: var(--teal-light); color: var(--teal); display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; font-family: var(--f-head); font-size: 26px; font-weight: 700; }
+.success-msg h3 { font-family: var(--f-head); font-size: 24px; font-weight: 700; letter-spacing: -0.8px; color: var(--black); margin-bottom: 10px; }
+.success-msg p { font-family: var(--f-body); font-size: 15px; font-weight: 500; color: var(--gray); line-height: 1.7; }
+
+/* ── DISCLAIMER / FOOTER ── */
+.disclaimer-wrap { background: var(--cream); padding: 24px 5vw 0; }
+.disclaimer { max-width: 1100px; margin: 0 auto; background: var(--orange-light); border: 1px solid rgba(255,109,0,0.25); border-radius: 8px; padding: 16px 22px; font-family: var(--f-body); font-size: 13px; font-weight: 500; color: #7a3a00; line-height: 1.65; }
+.disclaimer strong { font-weight: 700; color: #5a2800; }
+footer { background: var(--cream); border-top: 1px solid var(--gray-light); padding: 36px 5vw; }
+.footer-inner { max-width: 1100px; margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; }
+.footer-left { font-family: var(--f-body); font-size: 13px; font-weight: 500; color: var(--gray-mid); line-height: 1.7; }
+.footer-left strong { font-weight: 700; color: var(--gray); }
+.footer-links { display: flex; gap: 24px; }
+.footer-links a { font-family: var(--f-body); font-size: 13px; font-weight: 500; color: var(--gray-mid); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--teal); }
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp { from{opacity:0;transform:translateY(28px)} to{opacity:1;transform:translateY(0)} }
+.reveal { opacity:0; transform:translateY(22px); transition:opacity 0.65s ease, transform 0.65s ease; }
+.reveal.visible { opacity:1; transform:translateY(0); }
+
+@media (max-width:860px) {
+  .teal-band-inner,.form-inner { grid-template-columns:1fr; gap:36px; }
+  .steps { grid-template-columns:1fr; gap:36px; }
+  .steps::before { display:none; }
+  .scan-bars,.scan-feedback,.form-row { grid-template-columns:1fr; }
+  .hero-title { letter-spacing:-1.5px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div style="display:flex;align-items:center;gap:10px;">
+    <a class="gusi-logo" href="#">
+      <div class="gusi-box">GUSI</div>
+      <div class="gusi-sliver"></div>
+      <div class="gusi-wordblock"><p>GLOBAL<br>ULTRASOUND<br>INSTITUTE</p></div>
+    </a>
+    <div class="nav-product">Instant Review <span>· ScanHub</span></div>
+  </div>
+  <a class="nav-cta" href="#early-access">Get Early Access</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-eyebrow"><div class="eyebrow-dot"></div>Pre-Launch &mdash; Join the Waitlist</div>
+  <h1 class="hero-title">Feedback that makes<br>you <em>better, faster.</em></h1>
+  <p class="hero-subtitle">Instant Review uses AI to analyze your ultrasound scans and deliver targeted, actionable feedback — in minutes. Available 24/7 through GUSI ScanHub.</p>
+  <div class="hero-actions">
+    <a href="#early-access" class="btn-primary">Request Early Access</a>
+    <a href="#how-it-works" class="btn-ghost-w">See how it works</a>
+  </div>
+
+  <div class="hero-visual">
+    <div class="scan-card">
+      <div class="scan-top">
+        <span class="scan-label">AI Analysis — DVT Screening</span>
+        <span class="scan-ai-badge"><span class="ai-dot"></span>&nbsp;AI Analyzing</span>
+      </div>
+      <div class="scan-bars">
+        <div class="sbar"><div class="sbar-name">Image Quality</div><div class="sbar-track"><div class="sbar-fill fill-teal" style="width:88%"></div></div><div class="sbar-val val-teal">88%</div></div>
+        <div class="sbar"><div class="sbar-name">Completeness</div><div class="sbar-track"><div class="sbar-fill fill-orange" style="width:74%"></div></div><div class="sbar-val val-orange">74%</div></div>
+        <div class="sbar"><div class="sbar-name">Technique</div><div class="sbar-track"><div class="sbar-fill fill-green" style="width:91%"></div></div><div class="sbar-val val-green">91%</div></div>
+      </div>
+      <div class="scan-feedback">
+        <div class="fb-block">
+          <div class="fb-tag tag-green"><svg width="9" height="9" viewBox="0 0 9 9" fill="none"><circle cx="4.5" cy="4.5" r="3.5" fill="#1f9e60" fill-opacity="0.2"/><path d="M2.5 4.5l1.5 1.5L6.5 3" stroke="#1f9e60" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>&nbsp;Strengths</div>
+          <div class="fb-line fl-80" style="background:rgba(31,158,96,0.2)"></div>
+          <div class="fb-line fl-60" style="background:rgba(31,158,96,0.14)"></div>
+          <div class="fb-line fl-70" style="background:rgba(31,158,96,0.10)"></div>
+        </div>
+        <div class="fb-block">
+          <div class="fb-tag tag-orange"><svg width="9" height="9" viewBox="0 0 9 9" fill="none"><circle cx="4.5" cy="4.5" r="3.5" fill="#ff6d00" fill-opacity="0.2"/><path d="M4.5 2.5v3M4.5 7v.5" stroke="#ff6d00" stroke-width="1.3" stroke-linecap="round"/></svg>&nbsp;Recommendations</div>
+          <div class="fb-line fl-50" style="background:rgba(255,109,0,0.16)"></div>
+          <div class="fb-line fl-65" style="background:rgba(255,109,0,0.11)"></div>
+          <div class="fb-line fl-70" style="background:rgba(255,109,0,0.08)"></div>
+        </div>
+      </div>
+      <div class="scan-time">Report generated in <strong>2m 14s</strong>&nbsp; · &nbsp;Available 24/7 via ScanHub</div>
+    </div>
+  </div>
+
+  <div class="hero-wave">
+    <svg viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="display:block;width:100%;height:80px;">
+      <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#ff6d00"/>
+    </svg>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stats-inner">
+    <div class="reveal"><div class="stat-num">&lt;5<sup>min</sup></div><div class="stat-label">Feedback turnaround,<br>not days</div></div>
+    <div class="reveal"><div class="stat-num">24/7</div><div class="stat-label">Always-on access<br>through ScanHub</div></div>
+    <div class="reveal"><div class="stat-num">4+</div><div class="stat-label">Clinical domains<br>at launch</div></div>
+    <div class="reveal"><div class="stat-num">∞</div><div class="stat-label">Scans reviewed<br>without bottleneck</div></div>
+  </div>
+</div>
+<div style="background:#ff6d00;line-height:0;"><svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="display:block;width:100%;height:60px;"><path d="M0,0 C360,60 1080,0 1440,30 L1440,0 Z" fill="#ffffff"/></svg></div>
+
+<!-- HOW IT WORKS -->
+<section class="hiw" id="how-it-works">
+  <div class="section-inner">
+    <span class="section-eyebrow reveal">How It Works</span>
+    <h2 class="section-title reveal">Three steps to <span class="teal">better scanning</span></h2>
+    <p class="section-desc reveal">No waiting for a supervisor. No scheduling review sessions. Upload and get a full AI report while the scan is still fresh.</p>
+    <div class="steps">
+      <div class="step reveal"><div class="step-num num-teal">01</div><h3>Upload your scan</h3><p>Submit any ultrasound acquisition directly through ScanHub — GUSI's secure central platform for scan management and review.</p></div>
+      <div class="step reveal"><div class="step-num num-orange">02</div><h3>AI analyzes in minutes</h3><p>Instant Review evaluates image quality, scan completeness, probe technique, and anatomical visualization — automatically.</p></div>
+      <div class="step reveal"><div class="step-num num-green">03</div><h3>Get your report</h3><p>Receive a structured report covering strengths, areas for improvement, and specific, actionable steps for your very next scan.</p></div>
+    </div>
+  </div>
+</section>
+<div style="background:#fff;line-height:0;"><svg viewBox="0 0 1440 50" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="display:block;width:100%;height:50px;"><path d="M0,50 C480,0 960,50 1440,20 L1440,50 Z" fill="#fdf6f0"/></svg></div>
+
+<!-- FEATURES -->
+<section class="features">
+  <div class="section-inner">
+    <span class="section-eyebrow reveal">Why Instant Review</span>
+    <h2 class="section-title reveal">Built different.<br><span class="teal">On purpose.</span></h2>
+    <p class="section-desc reveal">Targeted feedback that tells you not just what to improve — but exactly how.</p>
+    <div class="features-grid">
+      <div class="feat-card reveal">
+        <div class="feat-icon fi-orange"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#ff6d00" stroke-width="1.8"/><path d="M12 7v5.5l3 1.8" stroke="#ff6d00" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+        <h3>Instant, not eventual</h3>
+        <p>Feedback in under 5 minutes. When learning is immediate, skill compounds — not days after the fact when the moment has passed.</p>
+      </div>
+      <div class="feat-card reveal">
+        <div class="feat-icon fi-teal"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M12 5v14" stroke="#00848e" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="12" r="4.5" stroke="#00848e" stroke-width="1.8"/></svg></div>
+        <h3>Targeted, not generic</h3>
+        <p>Every recommendation is specific and actionable — acquire orthogonal views, optimize gain settings, demonstrate structural continuity.</p>
+      </div>
+      <div class="feat-card reveal">
+        <div class="feat-icon fi-orange"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="7" height="7" rx="1.5" stroke="#ff6d00" stroke-width="1.8"/><rect x="13" y="4" width="7" height="7" rx="1.5" stroke="#ff6d00" stroke-width="1.8"/><rect x="4" y="13" width="7" height="7" rx="1.5" stroke="#ff6d00" stroke-width="1.8"/><rect x="13" y="13" width="7" height="7" rx="1.5" stroke="#ff6d00" stroke-width="1.8"/></svg></div>
+        <h3>Scalable, not bottlenecked</h3>
+        <p>Review unlimited scans across your entire team — zero human throughput limit. Real quality assurance at genuine scale.</p>
+      </div>
+      <div class="feat-card reveal">
+        <div class="feat-icon fi-teal"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 3C7.03 3 3 7.03 3 12s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9z" stroke="#00848e" stroke-width="1.8"/><path d="M8.5 12l2.5 2.5 5-5" stroke="#00848e" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Education-first design</h3>
+        <p>Built as a learning tool, not a diagnostic one. Transparent AI so learners build real skill — not a false sense of clinical accuracy.</p>
+      </div>
+      <div class="feat-card reveal">
+        <div class="feat-icon fi-orange"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 17.5L8.5 12L12.5 15.5L18 9L21 11.5" stroke="#ff6d00" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Track your progress</h3>
+        <p>Monitor improvement across repeated scans and clinical scenarios. Quality programs gain longitudinal data to show real growth.</p>
+      </div>
+      <div class="feat-card reveal">
+        <div class="feat-icon fi-teal"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2.5L14.3 8.8H21L15.85 12.5L17.7 19L12 15.4L6.3 19L8.15 12.5L3 8.8H9.7L12 2.5Z" stroke="#00848e" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
+        <h3>Powered by GUSI AI</h3>
+        <p>Built on GUSI's deep expertise in ultrasound education — the same rigor behind our structured curricula, now automated and always on.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<div style="background:#fdf6f0;line-height:0;"><svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="display:block;width:100%;height:60px;"><path d="M0,60 C400,0 1040,60 1440,20 L1440,60 Z" fill="#00848e"/></svg></div>
+
+<!-- WHO IT'S FOR -->
+<section class="teal-band">
+  <div class="teal-band-inner">
+    <div class="reveal">
+      <div style="font-family:var(--f-body);font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:14px;">Who It's For</div>
+      <h2>Designed for every step of the <em>journey.</em></h2>
+      <p class="lead">From first-year residents discovering ultrasound to experienced clinicians running institutional QA programs — Instant Review grows with you.</p>
+    </div>
+    <div class="aud-list reveal">
+      <div class="aud-row"><div class="aud-icon">🎓</div><div class="aud-text"><h4>Residents & Medical Students</h4><p>Immediate feedback at every step accelerates real skill development.</p></div></div>
+      <div class="aud-row"><div class="aud-icon">🏥</div><div class="aud-text"><h4>Clinical Teams</h4><p>Maintain consistent image quality standards across your entire practice.</p></div></div>
+      <div class="aud-row"><div class="aud-icon">⚡</div><div class="aud-text"><h4>POCUS Providers</h4><p>Quick quality checks when you need them — around the clock.</p></div></div>
+      <div class="aud-row"><div class="aud-icon">📊</div><div class="aud-text"><h4>QA Program Directors</h4><p>Systematize feedback and track improvement with longitudinal data.</p></div></div>
+      <div class="aud-row"><div class="aud-icon">📚</div><div class="aud-text"><h4>Educators & Faculty</h4><p>Scalable, objective assessment tools for every student in your program.</p></div></div>
+    </div>
+  </div>
+</section>
+<div style="background:#00848e;line-height:0;"><svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="display:block;width:100%;height:60px;"><path d="M0,0 C480,60 960,0 1440,40 L1440,0 Z" fill="#ffffff"/></svg></div>
+
+<!-- CLINICAL -->
+<section class="clinical">
+  <div class="section-inner clinical-center">
+    <span class="section-eyebrow reveal">Clinical Scope</span>
+    <h2 class="section-title reveal">Multiple domains at launch,<br><span class="teal">more on the way.</span></h2>
+    <p class="section-desc reveal">Instant Review is modular and expanding. Current coverage includes:</p>
+    <div class="pills reveal">
+      <div class="pill"><div class="pill-dot"></div>Musculoskeletal (MSK)</div>
+      <div class="pill"><div class="pill-dot"></div>DVT Screening</div>
+      <div class="pill"><div class="pill-dot"></div>Vascular Assessment</div>
+      <div class="pill"><div class="pill-dot"></div>Abdominal Imaging</div>
+      <div class="pill"><div class="pill-dot"></div>Liver</div>
+      <div class="pill"><div class="pill-dot"></div>POCUS</div>
+      <div class="pill"><div class="pill-dot"></div>Ankle &amp; Foot</div>
+      <div class="pill"><div class="pill-dot"></div>Joints &amp; Tendons</div>
+      <div class="pill pill-more">+ More coming</div>
+    </div>
+  </div>
+</section>
+<div style="background:#fff;line-height:0;"><svg viewBox="0 0 1440 50" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="display:block;width:100%;height:50px;"><path d="M0,0 C360,50 1080,0 1440,30 L1440,50 L0,50 Z" fill="#fdf6f0"/></svg></div>
+
+<!-- ECOSYSTEM -->
+<section class="ecosystem">
+  <div class="section-inner">
+    <span class="section-eyebrow reveal">GUSI Ecosystem</span>
+    <h2 class="section-title reveal">Part of something <span class="teal">bigger.</span></h2>
+    <p class="section-desc reveal">Instant Review amplifies every other part of your GUSI learning journey.</p>
+    <div class="eco-grid">
+      <div class="eco-card highlight reveal"><div class="eco-tag">You're here</div><div class="eco-name">Instant Review</div><div class="eco-desc">AI-powered, real-time scan feedback and quality assessment.</div></div>
+      <div class="eco-card reveal"><div class="eco-name">ScanHub</div><div class="eco-desc">Central platform for uploading, storing, and reviewing scans.</div></div>
+      <div class="eco-card reveal"><div class="eco-name">GUSI Essentials</div><div class="eco-desc">Structured curricula covering fundamental ultrasound principles.</div></div>
+      <div class="eco-card reveal"><div class="eco-name">E-Sim Cases</div><div class="eco-desc">Virtual simulation cases for immersive procedural learning.</div></div>
+      <div class="eco-card reveal"><div class="eco-name">Live Instruction</div><div class="eco-desc">Professional training and mentorship from GUSI experts.</div></div>
+    </div>
+  </div>
+</section>
+<div style="background:#fdf6f0;line-height:0;"><svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="display:block;width:100%;height:60px;"><path d="M0,60 C360,10 1080,60 1440,20 L1440,60 Z" fill="#00848e"/></svg></div>
+
+<!-- FORM -->
+<section class="form-section" id="early-access">
+  <div class="form-inner">
+    <div class="form-left reveal">
+      <div style="font-family:var(--f-body);font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:14px;">Pre-Launch</div>
+      <h2>Be first in line.<br><em>No limits. No wait.</em></h2>
+      <p class="lead">Instant Review is in pre-launch. Join the waitlist and we'll reach out when access opens for your institution.</p>
+      <div class="perks">
+        <div class="perk"><div class="perk-check"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 5.5l2.5 2.5 5-5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Priority access before public launch</div>
+        <div class="perk"><div class="perk-check"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 5.5l2.5 2.5 5-5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Free trial period for early registrants</div>
+        <div class="perk"><div class="perk-check"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 5.5l2.5 2.5 5-5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Input into features before full launch</div>
+        <div class="perk"><div class="perk-check"><svg width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M2 5.5l2.5 2.5 5-5" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>Direct onboarding support from GUSI</div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="form-card">
+        <div id="form-area">
+          <h3 class="form-title">Request Early Access</h3>
+          <p class="form-subtitle">Takes under 60 seconds — no commitment required.</p>
+          <div class="form-row">
+            <div class="form-group"><label for="fname">First name</label><input type="text" id="fname" placeholder="Elena" autocomplete="given-name"></div>
+            <div class="form-group"><label for="lname">Last name</label><input type="text" id="lname" placeholder="Marchetti" autocomplete="family-name"></div>
+          </div>
+          <div class="form-group"><label for="email">Work email</label><input type="email" id="email" placeholder="you@institution.edu" autocomplete="email"></div>
+          <div class="form-row">
+            <div class="form-group"><label for="role">Your role</label><select id="role"><option value="" disabled selected>Select role</option><option>Physician / Clinician</option><option>Resident / Fellow</option><option>Medical Student</option><option>Sonographer</option><option>Educator / Faculty</option><option>QA / Program Director</option><option>Other</option></select></div>
+            <div class="form-group"><label for="domain">Clinical focus</label><select id="domain"><option value="" disabled selected>Select focus</option><option>Emergency / Critical Care</option><option>Musculoskeletal</option><option>Vascular</option><option>Abdominal / General</option><option>Point-of-care (POCUS)</option><option>Multiple / General</option></select></div>
+          </div>
+          <div class="form-group"><label for="institution">Institution or organization</label><input type="text" id="institution" placeholder="e.g. UCSF Medical Center" autocomplete="organization"></div>
+          <div class="form-group"><label for="notes">Anything to share? <span style="font-weight:400;text-transform:none;letter-spacing:0;opacity:0.55">(optional)</span></label><textarea id="notes" placeholder="e.g. We run a 40-resident POCUS curriculum and are exploring QA tools..."></textarea></div>
+          <button class="form-submit" onclick="handleSubmit()">Request Early Access →</button>
+          <p class="form-fine">By submitting you agree to receive updates about Instant Review from GUSI. No spam, ever. <a href="#">Privacy policy</a></p>
+        </div>
+        <div class="success-msg" id="success-msg">
+          <div class="success-icon">✓</div>
+          <h3>You're on the list!</h3>
+          <p>We'll be in touch when early access opens. In the meantime, explore GUSI's courses and simulation cases on ScanHub.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div style="background:#00848e;line-height:0;"><svg viewBox="0 0 1440 50" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="display:block;width:100%;height:50px;"><path d="M0,0 C720,50 1200,0 1440,30 L1440,0 Z" fill="#fdf6f0"/></svg></div>
+
+<!-- DISCLAIMER -->
+<div class="disclaimer-wrap">
+  <div class="disclaimer"><strong>Important:</strong> Instant Review is a <strong>learning and quality assurance tool</strong>, not a clinical diagnostic tool. AI-generated feedback is designed to support skill development and scan quality improvement only. It should not be used to guide clinical decision-making or replace qualified medical judgment. All clinical decisions remain the sole responsibility of the treating clinician.</div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-left"><strong>Instant Review</strong> &nbsp;·&nbsp; Part of ScanHub by GUSI — Global Ultrasound Institute<br>&copy; 2025 GUSI. All rights reserved.</div>
+    <div class="footer-links"><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Contact</a><a href="#">gusipocus.com</a></div>
+  </div>
+</footer>
+
+<script>
+function handleSubmit() {
+  const fname = document.getElementById('fname').value.trim();
+  const email = document.getElementById('email').value.trim();
+  if (!fname || !email) { alert('Please fill in your name and email to continue.'); return; }
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { alert('Please enter a valid email address.'); return; }
+  document.getElementById('form-area').style.display = 'none';
+  document.getElementById('success-msg').classList.add('visible');
+}
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
