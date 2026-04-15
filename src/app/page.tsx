@@ -46,17 +46,11 @@ export default function Home() {
       <nav className="site-nav">
         <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
           <a className="gusi-logo" href="#">
-            <div className="gusi-box">GUSI</div>
-            <div className="gusi-sliver" />
-            <div className="gusi-wordblock">
-              <p>
-                GLOBAL
-                <br />
-                ULTRASOUND
-                <br />
-                INSTITUTE
-              </p>
-            </div>
+            <img
+              src="/gusi-logo.jpg"
+              alt="GUSI — Global Ultrasound Institute"
+              style={{ height: 42, width: "auto", borderRadius: 6 }}
+            />
           </a>
           <div className="nav-product">
             Instant Review <span>&middot; ScanHub</span>
