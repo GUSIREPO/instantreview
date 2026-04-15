@@ -263,11 +263,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <div style={{ background: "var(--cream)", lineHeight: 0 }}>
-        <svg viewBox="0 0 1440 50" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style={{ display: "block", width: "100%", height: 50 }}>
-          <path d="M0,0 C360,50 1080,0 1440,30 L1440,50 L0,50 Z" fill="var(--cream)" />
-        </svg>
-      </div>
 
       {/* FEATURES */}
       <section className="features">
@@ -544,7 +539,7 @@ export default function Home() {
           <div className="footer-left">
             <strong>Instant Review</strong> &nbsp;&middot;&nbsp; Part of ScanHub by GUSI — Global Ultrasound Institute
             <br />
-            &copy; 2025 GUSI. All rights reserved.
+            &copy; 2026 GUSI. All rights reserved.
           </div>
           <div className="footer-links">
             <a href="#">Privacy</a>
