@@ -231,6 +231,44 @@ export default function Home() {
         </svg>
       </div>
 
+      {/* VIDEO DEMO */}
+      <section style={{ background: "var(--cream)" }}>
+        <div className="section-inner" style={{ textAlign: "center" }}>
+          <span className="section-eyebrow reveal">See It In Action</span>
+          <h2 className="section-title reveal">
+            Watch how <span className="teal">Instant Review</span> works
+          </h2>
+          <p className="section-desc reveal" style={{ margin: "0 auto 48px" }}>
+            A quick look at how AI-powered feedback transforms your ultrasound learning experience.
+          </p>
+          <div className="reveal" style={{ display: "flex", justifyContent: "center" }}>
+            <div style={{
+              width: 340,
+              maxWidth: "100%",
+              aspectRatio: "9 / 16",
+              borderRadius: 16,
+              overflow: "hidden",
+              boxShadow: "var(--shadow-lg)",
+              border: "3px solid var(--gray-light)",
+              background: "#000",
+            }}>
+              <iframe
+                src="https://www.youtube.com/embed/obWe3AQUZFI"
+                title="Instant Review Demo"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                style={{ width: "100%", height: "100%", border: "none" }}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <div style={{ background: "var(--cream)", lineHeight: 0 }}>
+        <svg viewBox="0 0 1440 50" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style={{ display: "block", width: "100%", height: 50 }}>
+          <path d="M0,0 C360,50 1080,0 1440,30 L1440,50 L0,50 Z" fill="var(--cream)" />
+        </svg>
+      </div>
+
       {/* FEATURES */}
       <section className="features">
         <div className="section-inner">
