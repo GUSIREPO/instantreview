@@ -95,67 +95,78 @@ export default function Home() {
 
         <div className="hero-visual" style={{ position: "relative", zIndex: 10 }}>
           <div className="scan-card">
+            {/* Header */}
             <div className="scan-top">
-              <span className="scan-label">AI Analysis — DVT Screening</span>
+              <span className="scan-label">AI Report — OB 2nd / 3rd Trimester</span>
               <span className="scan-ai-badge">
                 <span className="ai-dot" />
-                &nbsp;AI Analyzing
+                &nbsp;AI Complete
               </span>
             </div>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 8, marginBottom: 16 }}>
+
+            {/* Scan images */}
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 8, marginBottom: 18 }}>
+              <img src="/scans/scan1.jpeg" alt="Fetal ultrasound" style={{ width: "100%", height: 90, objectFit: "cover", borderRadius: 8, border: "1px solid var(--gray-light)" }} />
               <img src="/scans/scan3.jpeg" alt="Annotated liver ultrasound" style={{ width: "100%", height: 90, objectFit: "cover", borderRadius: 8, border: "1px solid var(--gray-light)" }} />
               <img src="/scans/scan4.jpeg" alt="Gall bladder ultrasound" style={{ width: "100%", height: 90, objectFit: "cover", borderRadius: 8, border: "1px solid var(--gray-light)" }} />
-              <img src="/scans/scan2.jpeg" alt="Kidney ultrasound" style={{ width: "100%", height: 90, objectFit: "cover", borderRadius: 8, border: "1px solid var(--gray-light)" }} />
             </div>
-            <div className="scan-bars">
-              <div className="sbar">
-                <div className="sbar-name">Image Quality</div>
-                <div className="sbar-track">
-                  <div className="sbar-fill fill-teal" style={{ width: "88%" }} />
-                </div>
-                <div className="sbar-val val-teal">88%</div>
+
+            {/* Image Quality Score */}
+            <div style={{ background: "var(--teal-light)", border: "1px solid rgba(0,132,142,0.2)", borderRadius: 10, padding: "16px 18px", marginBottom: 14, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+              <div>
+                <div style={{ fontFamily: "var(--f-body)", fontSize: 10, fontWeight: 700, letterSpacing: "1.5px", textTransform: "uppercase" as const, color: "var(--teal-dark)", marginBottom: 4 }}>Image Quality Score</div>
+                <div style={{ fontFamily: "var(--f-body)", fontSize: 12, fontWeight: 500, color: "var(--gray)", lineHeight: 1.5 }}>Minimal criteria met; recognizable structures with some technical flaws.</div>
               </div>
-              <div className="sbar">
-                <div className="sbar-name">Completeness</div>
-                <div className="sbar-track">
-                  <div className="sbar-fill fill-orange" style={{ width: "74%" }} />
+              <div style={{ display: "flex", alignItems: "center", gap: 6, flexShrink: 0, marginLeft: 16 }}>
+                <div style={{ fontFamily: "var(--f-head)", fontSize: 36, fontWeight: 800, color: "var(--teal)", lineHeight: 1 }}>3</div>
+                <div style={{ fontFamily: "var(--f-body)", fontSize: 11, fontWeight: 600, color: "var(--gray-mid)" }}>/5</div>
+                <div style={{ display: "flex", gap: 3, marginLeft: 8 }}>
+                  {[1,2,3,4,5].map((n) => (
+                    <div key={n} style={{ width: 10, height: 10, borderRadius: "50%", background: n <= 3 ? "var(--teal)" : "var(--gray-light)" }} />
+                  ))}
                 </div>
-                <div className="sbar-val val-orange">74%</div>
-              </div>
-              <div className="sbar">
-                <div className="sbar-name">Technique</div>
-                <div className="sbar-track">
-                  <div className="sbar-fill fill-green" style={{ width: "91%" }} />
-                </div>
-                <div className="sbar-val val-green">91%</div>
               </div>
             </div>
-            <div className="scan-feedback">
-              <div className="fb-block">
-                <div className="fb-tag tag-green">
-                  <svg width="9" height="9" viewBox="0 0 9 9" fill="none">
-                    <circle cx="4.5" cy="4.5" r="3.5" fill="#1f9e60" fillOpacity="0.2" />
-                    <path d="M2.5 4.5l1.5 1.5L6.5 3" stroke="#1f9e60" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                  &nbsp;Strengths
+
+            {/* Strengths & Weaknesses */}
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, marginBottom: 14 }}>
+              <div style={{ background: "var(--cream)", borderRadius: 10, padding: "14px 16px", border: "1px solid var(--gray-light)" }}>
+                <div style={{ fontFamily: "var(--f-body)", fontSize: 10, fontWeight: 700, letterSpacing: "1.2px", textTransform: "uppercase" as const, color: "#1f9e60", marginBottom: 10, display: "flex", alignItems: "center", gap: 5 }}>
+                  <svg width="9" height="9" viewBox="0 0 9 9" fill="none"><circle cx="4.5" cy="4.5" r="3.5" fill="#1f9e60" fillOpacity="0.2" /><path d="M2.5 4.5l1.5 1.5L6.5 3" stroke="#1f9e60" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                  Strengths
                 </div>
-                <div className="fb-line fl-80" style={{ background: "rgba(31,158,96,0.2)" }} />
-                <div className="fb-line fl-60" style={{ background: "rgba(31,158,96,0.14)" }} />
-                <div className="fb-line fl-70" style={{ background: "rgba(31,158,96,0.10)" }} />
+                <ul style={{ fontFamily: "var(--f-body)", fontSize: 11.5, fontWeight: 500, color: "var(--gray)", lineHeight: 1.6, paddingLeft: 14, margin: 0 }}>
+                  <li style={{ marginBottom: 6 }}>Clear fetal head/skull ring visualized with adequate penetration</li>
+                  <li style={{ marginBottom: 6 }}>Depth appropriate to include full calvarium</li>
+                  <li>At least one documented fetal biometric view</li>
+                </ul>
               </div>
-              <div className="fb-block">
-                <div className="fb-tag tag-orange">
-                  <svg width="9" height="9" viewBox="0 0 9 9" fill="none">
-                    <circle cx="4.5" cy="4.5" r="3.5" fill="#ff6d00" fillOpacity="0.2" />
-                    <path d="M4.5 2.5v3M4.5 7v.5" stroke="#ff6d00" strokeWidth="1.3" strokeLinecap="round" />
-                  </svg>
-                  &nbsp;Recommendations
+              <div style={{ background: "var(--cream)", borderRadius: 10, padding: "14px 16px", border: "1px solid var(--gray-light)" }}>
+                <div style={{ fontFamily: "var(--f-body)", fontSize: 10, fontWeight: 700, letterSpacing: "1.2px", textTransform: "uppercase" as const, color: "var(--orange)", marginBottom: 10, display: "flex", alignItems: "center", gap: 5 }}>
+                  <svg width="9" height="9" viewBox="0 0 9 9" fill="none"><circle cx="4.5" cy="4.5" r="3.5" fill="#ff6d00" fillOpacity="0.2" /><path d="M4.5 2.5v3M4.5 7v.5" stroke="#ff6d00" strokeWidth="1.3" strokeLinecap="round" /></svg>
+                  Weaknesses
                 </div>
-                <div className="fb-line fl-50" style={{ background: "rgba(255,109,0,0.16)" }} />
-                <div className="fb-line fl-65" style={{ background: "rgba(255,109,0,0.11)" }} />
-                <div className="fb-line fl-70" style={{ background: "rgba(255,109,0,0.08)" }} />
+                <ul style={{ fontFamily: "var(--f-body)", fontSize: 11.5, fontWeight: 500, color: "var(--gray)", lineHeight: 1.6, paddingLeft: 14, margin: 0 }}>
+                  <li style={{ marginBottom: 6 }}>Single view insufficient for full 5-step OB exam</li>
+                  <li style={{ marginBottom: 6 }}>No documented sweep to establish fetal number</li>
+                  <li>No fetal cardiac view with M-mode for FHR</li>
+                </ul>
               </div>
             </div>
+
+            {/* Targeted Recommendations */}
+            <div style={{ background: "var(--cream)", borderRadius: 10, padding: "14px 16px", border: "1px solid var(--gray-light)", marginBottom: 14 }}>
+              <div style={{ fontFamily: "var(--f-body)", fontSize: 10, fontWeight: 700, letterSpacing: "1.2px", textTransform: "uppercase" as const, color: "var(--teal)", marginBottom: 10, display: "flex", alignItems: "center", gap: 5 }}>
+                <svg width="9" height="9" viewBox="0 0 9 9" fill="none"><circle cx="4.5" cy="4.5" r="3.5" fill="#00848e" fillOpacity="0.2" /><path d="M4.5 2v5M2 4.5h5" stroke="#00848e" strokeWidth="1.3" strokeLinecap="round" /></svg>
+                Targeted Recommendations
+              </div>
+              <ol style={{ fontFamily: "var(--f-body)", fontSize: 11.5, fontWeight: 500, color: "var(--gray)", lineHeight: 1.6, paddingLeft: 16, margin: 0 }}>
+                <li style={{ marginBottom: 6 }}>Start each exam with a structured uterine scout sweep to document fetal number and orientation.</li>
+                <li style={{ marginBottom: 6 }}>Add dedicated clips for: presentation, fetal heart with M-mode, placenta distal edge, and deepest fluid pocket.</li>
+                <li>Optimize each target: reduce depth to center the structure, adjust gain to keep skull/soft tissues distinct.</li>
+              </ol>
+            </div>
+
             <div className="scan-time">
               Report generated in <strong>2m 14s</strong>&nbsp; &middot; &nbsp;Available 24/7 via ScanHub
             </div>
