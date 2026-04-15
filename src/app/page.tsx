@@ -102,6 +102,11 @@ export default function Home() {
                 &nbsp;AI Analyzing
               </span>
             </div>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 8, marginBottom: 16 }}>
+              <img src="/scans/scan3.jpeg" alt="Annotated liver ultrasound" style={{ width: "100%", height: 90, objectFit: "cover", borderRadius: 8, border: "1px solid var(--gray-light)" }} />
+              <img src="/scans/scan4.jpeg" alt="Gall bladder ultrasound" style={{ width: "100%", height: 90, objectFit: "cover", borderRadius: 8, border: "1px solid var(--gray-light)" }} />
+              <img src="/scans/scan2.jpeg" alt="Kidney ultrasound" style={{ width: "100%", height: 90, objectFit: "cover", borderRadius: 8, border: "1px solid var(--gray-light)" }} />
+            </div>
             <div className="scan-bars">
               <div className="sbar">
                 <div className="sbar-name">Image Quality</div>
@@ -300,6 +305,11 @@ export default function Home() {
             <p className="lead">
               From first-year residents discovering ultrasound to experienced clinicians running institutional QA programs — Instant Review grows with you.
             </p>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, marginTop: 32 }}>
+              <img src="/scans/scan1.jpeg" alt="Fetal ultrasound scan" style={{ width: "100%", height: 120, objectFit: "cover", borderRadius: 10, border: "2px solid rgba(255,255,255,0.15)" }} />
+              <img src="/scans/scan5.jpeg" alt="Liver long ultrasound" style={{ width: "100%", height: 120, objectFit: "cover", borderRadius: 10, border: "2px solid rgba(255,255,255,0.15)" }} />
+              <img src="/scans/scan2.jpeg" alt="Kidney ultrasound" style={{ width: "100%", height: 120, objectFit: "cover", borderRadius: 10, border: "2px solid rgba(255,255,255,0.15)", gridColumn: "1 / -1" }} />
+            </div>
           </div>
           <div className="aud-list reveal">
             <div className="aud-row"><div className="aud-icon">🎓</div><div className="aud-text"><h4>Residents &amp; Medical Students</h4><p>Immediate feedback at every step accelerates real skill development.</p></div></div>
