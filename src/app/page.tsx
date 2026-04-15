@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import ShaderBackground from "@/components/ui/shader-background";
+import CountdownTimer from "@/components/ui/countdown-timer";
 
 export default function Home() {
   const [submitted, setSubmitted] = useState(false);
@@ -65,6 +66,11 @@ export default function Home() {
           Get Early Access
         </a>
       </nav>
+
+      {/* COUNTDOWN — sticky below nav */}
+      <div style={{ paddingTop: 68 }}>
+        <CountdownTimer />
+      </div>
 
       {/* HERO — with shader background */}
       <section className="hero">
