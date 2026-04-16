@@ -53,7 +53,7 @@ export default function Home() {
             />
           </a>
           <div className="nav-product">
-            Instant Review <span>&middot; ScanHub</span>
+            Instant Review™ <span>&middot; ScanHub</span>
           </div>
         </div>
         <a className="nav-cta" href="#early-access">
@@ -80,7 +80,7 @@ export default function Home() {
           you <em>better, faster.</em>
         </h1>
         <p className="hero-subtitle" style={{ position: "relative", zIndex: 10 }}>
-          Instant Review uses AI to analyze your ultrasound scans and deliver
+          Instant Review™ uses AI to analyze your ultrasound scans and deliver
           targeted, actionable feedback — in minutes. Available 24/7 through
           GUSI ScanHub.
         </p>
@@ -97,7 +97,7 @@ export default function Home() {
           <div className="scan-card">
             {/* Header */}
             <div className="scan-top">
-              <span className="scan-label">Instant Review — Lung-DEC21-00050 (Lung)</span>
+              <span className="scan-label">Instant Review™ — Lung-DEC21-00050 (Lung)</span>
               <span className="scan-ai-badge">
                 <span className="ai-dot" />
                 &nbsp;AI Complete
@@ -232,7 +232,7 @@ export default function Home() {
             <div className="step reveal">
               <div className="step-num num-orange">02</div>
               <h3>AI analyzes in minutes</h3>
-              <p>Instant Review evaluates image quality, scan completeness, probe technique, and anatomical visualization — automatically.</p>
+              <p>Instant Review™ evaluates image quality, scan completeness, probe technique, and anatomical visualization — automatically.</p>
             </div>
             <div className="step reveal">
               <div className="step-num num-green">03</div>
@@ -253,7 +253,7 @@ export default function Home() {
         <div className="section-inner" style={{ textAlign: "center" }}>
           <span className="section-eyebrow reveal">See It In Action</span>
           <h2 className="section-title reveal">
-            Watch how <span className="teal">Instant Review</span> works
+            Watch how <span className="teal">Instant Review™</span> works
           </h2>
           <p className="section-desc reveal" style={{ margin: "0 auto 48px" }}>
             A quick look at how AI-powered feedback transforms your ultrasound learning experience.
@@ -271,7 +271,7 @@ export default function Home() {
             }}>
               <iframe
                 src="https://www.youtube.com/embed/obWe3AQUZFI"
-                title="Instant Review Demo"
+                title="Instant Review™ Demo"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
                 style={{ width: "100%", height: "100%", border: "none" }}
@@ -284,7 +284,7 @@ export default function Home() {
       {/* FEATURES */}
       <section className="features">
         <div className="section-inner">
-          <span className="section-eyebrow reveal">Why Instant Review</span>
+          <span className="section-eyebrow reveal">Why Instant Review™</span>
           <h2 className="section-title reveal">
             Built different.<br />
             <span className="teal">On purpose.</span>
@@ -353,7 +353,7 @@ export default function Home() {
               Designed for every step of the <em>journey.</em>
             </h2>
             <p className="lead">
-              From first-year residents discovering ultrasound to experienced clinicians running institutional QA programs — Instant Review grows with you.
+              From first-year residents discovering ultrasound to experienced clinicians running institutional QA programs — Instant Review™ grows with you.
             </p>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, marginTop: 32 }}>
               <img src="/scans/scan1.jpeg" alt="Fetal ultrasound scan" style={{ width: "100%", height: 120, objectFit: "cover", borderRadius: 10, border: "2px solid rgba(255,255,255,0.15)" }} />
@@ -384,7 +384,7 @@ export default function Home() {
             Multiple domains at launch,<br />
             <span className="teal">more on the way.</span>
           </h2>
-          <p className="section-desc reveal">Instant Review is modular and expanding. Current coverage includes:</p>
+          <p className="section-desc reveal">Instant Review™ is modular and expanding. Current coverage includes:</p>
           <div className="pills reveal">
             <div className="pill"><div className="pill-dot" />Musculoskeletal (MSK)</div>
             <div className="pill"><div className="pill-dot" />DVT Screening</div>
@@ -411,9 +411,9 @@ export default function Home() {
           <h2 className="section-title reveal">
             Part of something <span className="teal">bigger.</span>
           </h2>
-          <p className="section-desc reveal">Instant Review amplifies every other part of your GUSI learning journey.</p>
+          <p className="section-desc reveal">Instant Review™ amplifies every other part of your GUSI learning journey.</p>
           <div className="eco-grid">
-            <div className="eco-card highlight reveal"><div className="eco-tag">You&apos;re here</div><div className="eco-name">Instant Review</div><div className="eco-desc">AI-powered, real-time scan feedback and quality assessment.</div></div>
+            <div className="eco-card highlight reveal"><div className="eco-tag">You&apos;re here</div><div className="eco-name">Instant Review™</div><div className="eco-desc">AI-powered, real-time scan feedback and quality assessment.</div></div>
             <div className="eco-card reveal"><div className="eco-name">ScanHub</div><div className="eco-desc">Central platform for uploading, storing, and reviewing scans.</div></div>
             <div className="eco-card reveal"><div className="eco-name">GUSI Essentials</div><div className="eco-desc">Structured curricula covering fundamental ultrasound principles.</div></div>
             <div className="eco-card reveal"><div className="eco-name">E-Sim Cases</div><div className="eco-desc">Virtual simulation cases for immersive procedural learning.</div></div>
@@ -440,7 +440,7 @@ export default function Home() {
               <em>No limits. No wait.</em>
             </h2>
             <p className="lead">
-              Instant Review is in pre-launch. Join the waitlist and we&apos;ll reach out when access opens for your institution.
+              Instant Review™ is in pre-launch. Join the waitlist and we&apos;ll reach out when access opens for your institution.
             </p>
             <div className="perks">
               {["Priority access before public launch", "Free trial period for early registrants", "Input into features before full launch", "Direct onboarding support from GUSI"].map((text) => (
@@ -517,7 +517,7 @@ export default function Home() {
                     Request Early Access →
                   </button>
                   <p className="form-fine">
-                    By submitting you agree to receive updates about Instant Review from GUSI. No spam, ever.{" "}
+                    By submitting you agree to receive updates about Instant Review™ from GUSI. No spam, ever.{" "}
                     <a href="#">Privacy policy</a>
                   </p>
                 </div>
@@ -545,7 +545,7 @@ export default function Home() {
       {/* DISCLAIMER */}
       <div className="disclaimer-wrap">
         <div className="disclaimer">
-          <strong>Important:</strong> Instant Review is a{" "}
+          <strong>Important:</strong> Instant Review™ is a{" "}
           <strong>learning and quality assurance tool</strong>, not a clinical diagnostic tool. AI-generated feedback is designed to support skill development and scan quality improvement only. It should not be used to guide clinical decision-making or replace qualified medical judgment. All clinical decisions remain the sole responsibility of the treating clinician.
         </div>
       </div>
@@ -554,7 +554,7 @@ export default function Home() {
       <footer>
         <div className="footer-inner">
           <div className="footer-left">
-            <strong>Instant Review</strong> &nbsp;&middot;&nbsp; Part of ScanHub by GUSI — Global Ultrasound Institute
+            <strong>Instant Review™</strong> &nbsp;&middot;&nbsp; Part of ScanHub by GUSI — Global Ultrasound Institute
             <br />
             &copy; 2026 GUSI. All rights reserved.
           </div>

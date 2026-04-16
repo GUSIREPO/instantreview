@@ -13,9 +13,9 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Instant Review — AI-Powered Ultrasound Feedback | GUSI ScanHub",
+  title: "Instant Review™ — AI-Powered Ultrasound Feedback | GUSI ScanHub",
   description:
-    "Instant Review uses AI to analyze your ultrasound scans and deliver targeted, actionable feedback — in minutes. Available 24/7 through GUSI ScanHub.",
+    "Instant Review™ uses AI to analyze your ultrasound scans and deliver targeted, actionable feedback — in minutes. Available 24/7 through GUSI ScanHub.",
 };
 
 export default function RootLayout({
