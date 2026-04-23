@@ -125,9 +125,9 @@ export default function Home() {
                   Strengths
                 </div>
                 <ul style={{ fontFamily: "var(--f-body)", fontSize: 11.5, fontWeight: 500, color: "var(--gray)", lineHeight: 1.6, paddingLeft: 14, margin: 0 }}>
-                  <li style={{ marginBottom: 6 }}>Pleural line visualized in intercostal windows with rib shadows (&ldquo;bat sign&rdquo; framing)</li>
+                  <li style={{ marginBottom: 6 }}>Pleural line is visualized in intercostal windows with rib shadows (&ldquo;bat sign&rdquo; framing) for at least one zone</li>
                   <li style={{ marginBottom: 6 }}>Overall gain appears reasonable for pleural-line visualization</li>
-                  <li>Clip includes lateral sliding between adjacent interspaces rather than a single static view</li>
+                  <li>Clip includes some lateral sliding between adjacent interspaces rather than a single static view</li>
                 </ul>
               </div>
               <div style={{ background: "var(--cream)", borderRadius: 10, padding: "14px 16px", border: "1px solid var(--gray-light)" }}>
@@ -136,9 +136,9 @@ export default function Home() {
                   Weaknesses
                 </div>
                 <ul style={{ fontFamily: "var(--f-body)", fontSize: 11.5, fontWeight: 500, color: "var(--gray)", lineHeight: 1.6, paddingLeft: 14, margin: 0 }}>
-                  <li style={{ marginBottom: 6 }}>Exam completeness limited: no clear bilateral anterior + basal coverage documented</li>
-                  <li style={{ marginBottom: 6 }}>No basal/costophrenic angle views included, limiting dependent region assessment</li>
-                  <li>Cine duration/steadiness limited for motion-dependent pleural line assessment</li>
+                  <li style={{ marginBottom: 6 }}>Exam completeness is limited: only a small number of interspaces/zones are shown; no clear bilateral anterior + basal coverage is documented</li>
+                  <li style={{ marginBottom: 6 }}>No basal/costophrenic angle views with the diaphragm are included, limiting dependent region assessment</li>
+                  <li>Cine duration/steadiness is limited for motion-dependent assessment of the pleural line (more respiratory cycles would improve interpretability)</li>
                 </ul>
               </div>
             </div>
@@ -150,9 +150,9 @@ export default function Home() {
                 Targeted Recommendations
               </div>
               <ol style={{ fontFamily: "var(--f-body)", fontSize: 11.5, fontWeight: 500, color: "var(--gray)", lineHeight: 1.6, paddingLeft: 16, margin: 0 }}>
-                <li style={{ marginBottom: 6 }}>Document minimum views: anterior + basal on BOTH hemithoraces, adding interspaces to reach ~5 per side.</li>
-                <li style={{ marginBottom: 6 }}>Add dedicated basal/costophrenic angle clips on each side showing diaphragm and adjacent lung.</li>
-                <li>Keep pleural line centered between ribs, maintain beam perpendicular, and record longer steadier cines to capture multiple breaths.</li>
+                <li style={{ marginBottom: 6 }}>Document a minimum set of views: anterior + basal (just above diaphragm) on BOTH right and left hemithoraces, adding additional interspaces to reach ~5 per side when possible.</li>
+                <li style={{ marginBottom: 6 }}>Add dedicated basal/costophrenic angle clips on each side that clearly show the diaphragm and adjacent lung above it.</li>
+                <li>For each saved clip, keep the pleural line centered between ribs, maintain the beam as perpendicular as possible, and record longer, steadier cines to capture multiple breaths.</li>
               </ol>
             </div>
 
