@@ -97,7 +97,7 @@ export default function Home() {
           <div className="scan-card">
             {/* Header */}
             <div className="scan-top">
-              <span className="scan-label">Instant Review™ — Lung-DEC21-00050 (Lung)</span>
+              <span className="scan-label">Instant Review™ — Lung-MAR24-00065 (Lung)</span>
               <span className="scan-ai-badge">
                 <span className="ai-dot" />
                 &nbsp;AI Complete
@@ -114,7 +114,7 @@ export default function Home() {
             {/* Assumed Exam Scope */}
             <div style={{ background: "rgba(0,132,142,0.06)", borderRadius: 8, padding: "10px 14px", marginBottom: 14, fontFamily: "var(--f-body)", fontSize: 12, fontWeight: 500, color: "var(--gray)", lineHeight: 1.5, display: "flex", alignItems: "center", gap: 8 }}>
               <span style={{ fontWeight: 700, color: "var(--teal-dark)", fontSize: 10, letterSpacing: "1.2px", textTransform: "uppercase" as const, whiteSpace: "nowrap" }}>Exam Scope</span>
-              <span>Full exam (no case notes provided to indicate a focused question)</span>
+              <span>Full bilateral lung assessment — general symptomatic exam; no focal question</span>
             </div>
 
             {/* Strengths & Weaknesses */}
@@ -125,9 +125,9 @@ export default function Home() {
                   Strengths
                 </div>
                 <ul style={{ fontFamily: "var(--f-body)", fontSize: 11.5, fontWeight: 500, color: "var(--gray)", lineHeight: 1.6, paddingLeft: 14, margin: 0 }}>
-                  <li style={{ marginBottom: 6 }}>Pleural line is visualized in intercostal windows with rib shadows (&ldquo;bat sign&rdquo; framing) for at least one zone</li>
-                  <li style={{ marginBottom: 6 }}>Overall gain appears reasonable for pleural-line visualization</li>
-                  <li>Clip includes some lateral sliding between adjacent interspaces rather than a single static view</li>
+                  <li style={{ marginBottom: 6 }}>Multiple cine clips obtained across more than one lung zone &mdash; more than a single-point assessment</li>
+                  <li style={{ marginBottom: 6 }}>Pleural line visible within intercostal windows with reverberation artifact extending into the far field</li>
+                  <li>Depth increased in several clips to evaluate deeper artifacts and dependent regions, not just superficial pleura</li>
                 </ul>
               </div>
               <div style={{ background: "var(--cream)", borderRadius: 10, padding: "14px 16px", border: "1px solid var(--gray-light)" }}>
@@ -136,9 +136,9 @@ export default function Home() {
                   Weaknesses
                 </div>
                 <ul style={{ fontFamily: "var(--f-body)", fontSize: 11.5, fontWeight: 500, color: "var(--gray)", lineHeight: 1.6, paddingLeft: 14, margin: 0 }}>
-                  <li style={{ marginBottom: 6 }}>Exam completeness is limited: only a small number of interspaces/zones are shown; no clear bilateral anterior + basal coverage is documented</li>
-                  <li style={{ marginBottom: 6 }}>No basal/costophrenic angle views with the diaphragm are included, limiting dependent region assessment</li>
-                  <li>Cine duration/steadiness is limited for motion-dependent assessment of the pleural line (more respiratory cycles would improve interpretability)</li>
+                  <li style={{ marginBottom: 6 }}>Exam completeness limited: bilateral anterior + basal survey not fully documented, and posterior/costophrenic angle views not adequately shown</li>
+                  <li style={{ marginBottom: 6 }}>Basal dependent views insufficient; diaphragm not consistently identified, so pleural space near costophrenic angles is incomplete</li>
+                  <li>Pleural line optimization inconsistent with off-axis/drifting windows; brief/unsteady cines limit motion-dependent assessment</li>
                 </ul>
               </div>
             </div>
@@ -150,9 +150,9 @@ export default function Home() {
                 Targeted Recommendations
               </div>
               <ol style={{ fontFamily: "var(--f-body)", fontSize: 11.5, fontWeight: 500, color: "var(--gray)", lineHeight: 1.6, paddingLeft: 16, margin: 0 }}>
-                <li style={{ marginBottom: 6 }}>Document a minimum set of views: anterior + basal (just above diaphragm) on BOTH right and left hemithoraces, adding additional interspaces to reach ~5 per side when possible.</li>
-                <li style={{ marginBottom: 6 }}>Add dedicated basal/costophrenic angle clips on each side that clearly show the diaphragm and adjacent lung above it.</li>
-                <li>For each saved clip, keep the pleural line centered between ribs, maintain the beam as perpendicular as possible, and record longer, steadier cines to capture multiple breaths.</li>
+                <li style={{ marginBottom: 6 }}>Document anterior + basal on BOTH sides for a full exam, then add posterior costophrenic angle clips bilaterally to complete dependent coverage.</li>
+                <li style={{ marginBottom: 6 }}>In basal views, deliberately identify and hold the diaphragm/costophrenic angle so the pleural space is distinguished from subdiaphragmatic structures.</li>
+                <li>Center the pleural line between ribs, keep the beam perpendicular, and save longer steady cines after the window is optimized rather than during probe movement.</li>
               </ol>
             </div>
 
@@ -160,7 +160,7 @@ export default function Home() {
             <div style={{ background: "var(--teal-light)", border: "1px solid rgba(0,132,142,0.2)", borderRadius: 10, padding: "16px 18px", marginBottom: 14, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
               <div>
                 <div style={{ fontFamily: "var(--f-body)", fontSize: 10, fontWeight: 700, letterSpacing: "1.5px", textTransform: "uppercase" as const, color: "var(--teal-dark)", marginBottom: 4 }}>Image Quality Score</div>
-                <div style={{ fontFamily: "var(--f-body)", fontSize: 12, fontWeight: 500, color: "var(--gray)", lineHeight: 1.5 }}>Recognizable structures present but with some technical flaws.</div>
+                <div style={{ fontFamily: "var(--f-body)", fontSize: 12, fontWeight: 500, color: "var(--gray)", lineHeight: 1.5 }}>Minimal criteria met for diagnosis; recognizable structures present but with some technical flaws.</div>
               </div>
               <div style={{ display: "flex", alignItems: "center", gap: 6, flexShrink: 0, marginLeft: 16 }}>
                 <div style={{ fontFamily: "var(--f-head)", fontSize: 36, fontWeight: 800, color: "var(--teal)", lineHeight: 1 }}>3</div>
