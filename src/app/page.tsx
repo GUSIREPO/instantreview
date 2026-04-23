@@ -106,9 +106,9 @@ export default function Home() {
 
             {/* Scan images */}
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 8, marginBottom: 18 }}>
-              <img src="/scans/scan1.jpeg" alt="Lung ultrasound" style={{ width: "100%", height: 90, objectFit: "cover", borderRadius: 8, border: "1px solid var(--gray-light)" }} />
-              <img src="/scans/scan3.jpeg" alt="Annotated ultrasound" style={{ width: "100%", height: 90, objectFit: "cover", borderRadius: 8, border: "1px solid var(--gray-light)" }} />
-              <img src="/scans/scan4.jpeg" alt="Ultrasound scan" style={{ width: "100%", height: 90, objectFit: "cover", borderRadius: 8, border: "1px solid var(--gray-light)" }} />
+              <img src="/scans/scan1.png" alt="Lung ultrasound" style={{ width: "100%", height: 90, objectFit: "cover", borderRadius: 8, border: "1px solid var(--gray-light)" }} />
+              <img src="/scans/scan2.png" alt="Annotated ultrasound" style={{ width: "100%", height: 90, objectFit: "cover", borderRadius: 8, border: "1px solid var(--gray-light)" }} />
+              <img src="/scans/scan3.png" alt="Ultrasound scan" style={{ width: "100%", height: 90, objectFit: "cover", borderRadius: 8, border: "1px solid var(--gray-light)" }} />
             </div>
 
             {/* Assumed Exam Scope */}
