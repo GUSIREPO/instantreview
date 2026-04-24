@@ -97,7 +97,7 @@ export default function Home() {
           <div className="scan-card">
             {/* Header */}
             <div className="scan-top">
-              <span className="scan-label">Instant Review™ — Lung-MAR24-00065 (Lung)</span>
+              <span className="scan-label">Instant Review™ — Lung-01451</span>
               <span className="scan-ai-badge">
                 <span className="ai-dot" />
                 &nbsp;AI Complete
